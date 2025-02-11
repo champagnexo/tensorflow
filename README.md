@@ -19,43 +19,6 @@ This project demonstrates how to perform image classification using a pre-traine
 * NumPy
 * `libcamera-still` (for Raspberry Pi camera capture)
 
-```bash
-pip install tensorflow opencv-python numpy
-Setup
-Clone the repository:
-Bash
-
-git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://www.google.com/search?q=https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git) # Replace with your repo URL
-cd YOUR_REPOSITORY_NAME
-Create the necessary directories:
-Bash
-
-mkdir -p img/input img/processed
-(Optional) Install libcamera-still if you intend to use the Raspberry Pi camera capture feature. Refer to the documentation for your Raspberry Pi OS for installation instructions.
-Usage
-Place images you want to classify in the img/input directory.  Alternatively, use the Raspberry Pi camera integration (see below).
-
-Run the Python script (replace your_script_name.py with the actual name):
-
-Bash
-
-python your_script_name.py
-Start TensorBoard to view the logs:
-Bash
-
-tensorboard --logdir logs/fit
-Open TensorBoard in your browser (usually at http://localhost:6006).
-
-The script will continuously monitor the img/input directory.  Processed images will be moved to the img/processed directory.
-
-Raspberry Pi Camera Integration
-The script includes a command to capture images from a Raspberry Pi camera using libcamera-still and save them to the img/input directory. This command is executed every 2 seconds within the monitor_directory function. You can adjust the camera settings (width, height, output file name) as needed in the script.  The default command used is:
-
-Bash
-
-libcamera-still --width 1536 --height 1024 -o img/input/smaller.jpg
-Important: Ensure libcamera-still is installed and configured correctly on your Raspberry Pi.
-
 Project Structure
 YOUR_REPOSITORY_NAME/
 ├── img/
@@ -68,7 +31,7 @@ YOUR_REPOSITORY_NAME/
 Code Explanation (Key Parts)
 The Python script performs the following key actions:
 
-Loads Pre-trained Model: Loads the ResNet50 model with pre-trained weights from ImageNet.
+Loads Pre-trained Model
 Logs Model Information: Logs the model architecture summary and a visualization of the model to TensorBoard.
 classify_and_log_image() Function:
 Loads and preprocesses the input image.
