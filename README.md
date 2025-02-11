@@ -19,15 +19,6 @@ This project demonstrates how to perform image classification using a pre-traine
 * NumPy
 * `libcamera-still` (for Raspberry Pi camera capture)
 
-Project Structure
-YOUR_REPOSITORY_NAME/
-├── img/
-│   ├── input/        # Input images for classification
-│   └── processed/   # Processed images
-├── logs/             # TensorBoard logs
-│   └── fit/
-├── your_script_name.py # The main Python script
-└── README.md         # This file
 Code Explanation (Key Parts)
 The Python script performs the following key actions:
 
@@ -45,9 +36,3 @@ The Python script performs the following key actions:
 - Moves the processed image to the img/processed directory.
 - Includes the libcamera-still command to capture images from the camera.
 - Main Loop: Starts the monitor_directory() function to begin the image processing loop.
-  
-- Contributing
-- Contributions are welcome! Please open an issue or submit a pull request.
-
-License
-[Choose a license - e.g., MIT License]
