@@ -32,7 +32,7 @@ Code Explanation (Key Parts)
 The Python script performs the following key actions:
 
 Loads Pre-trained Model
-Logs Model Information: Logs the model architecture summary and a visualization of the model to TensorBoard.
+- Logs Model Information: Logs the model architecture summary and a visualization of the model to TensorBoard.
 classify_and_log_image() Function:
 Loads and preprocesses the input image.
 Performs prediction using the ResNet50 model.
