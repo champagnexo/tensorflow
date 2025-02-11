@@ -1,10 +1,9 @@
-# Image Classification and Logging with TensorFlow and ResNet50
+# Image Classification and Logging with TensorFlow
 
 This project demonstrates how to perform image classification using a pre-trained ResNet50 model in TensorFlow/Keras, and log the results, model architecture, and visualizations to TensorBoard.  It also includes a directory monitoring feature to automatically process new images added to a specified input directory.  A Raspberry Pi camera integration is included to capture images directly into the processing pipeline.
 
 ## Features
 
-* **Pre-trained ResNet50:** Utilizes the ResNet50 model pre-trained on ImageNet for image classification.
 * **Automatic Image Processing:** Monitors a designated input directory for new images and processes them automatically.
 * **TensorBoard Integration:** Logs model architecture, model visualization, classified images, and predictions to TensorBoard for easy monitoring and analysis.
 * **Image Annotation:** Adds predicted class and confidence score as a label to the processed images.
