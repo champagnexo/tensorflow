@@ -31,22 +31,23 @@ YOUR_REPOSITORY_NAME/
 Code Explanation (Key Parts)
 The Python script performs the following key actions:
 
-Loads Pre-trained Model
+- Loads Pre-trained Model
 - Logs Model Information: Logs the model architecture summary and a visualization of the model to TensorBoard.
-classify_and_log_image() Function:
-Loads and preprocesses the input image.
-Performs prediction using the ResNet50 model.
-Decodes the predictions to get the class name and confidence score.
-Annotates the image with the prediction information.
-Logs the annotated image and prediction text to TensorBoard.
-monitor_directory() Function:
-Continuously monitors the img/input directory for new files.
-For each new file, calls classify_and_log_image() to process it.
-Moves the processed image to the img/processed directory.
-Includes the libcamera-still command to capture images from the camera.
-Main Loop: Starts the monitor_directory() function to begin the image processing loop.
-Contributing
-Contributions are welcome! Please open an issue or submit a pull request.
+- classify_and_log_image() Function:
+- Loads and preprocesses the input image.
+- Performs prediction using the ResNet50 model.
+- Decodes the predictions to get the class name and confidence score.
+- Annotates the image with the prediction information.
+- Logs the annotated image and prediction text to TensorBoard.
+- monitor_directory() Function:
+- Continuously monitors the img/input directory for new files.
+- For each new file, calls classify_and_log_image() to process it.
+- Moves the processed image to the img/processed directory.
+- Includes the libcamera-still command to capture images from the camera.
+- Main Loop: Starts the monitor_directory() function to begin the image processing loop.
+  
+- Contributing
+- Contributions are welcome! Please open an issue or submit a pull request.
 
 License
 [Choose a license - e.g., MIT License]
