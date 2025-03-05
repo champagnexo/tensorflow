@@ -1,38 +1,105 @@
-# Image Classification and Logging with TensorFlow
+# 🧠 Raspberry Pi AI Camera - TensorFlow Lite Image Recognition
 
-This project demonstrates how to perform image classification using a pre-trained ResNet50 model in TensorFlow/Keras, and log the results, model architecture, and visualizations to TensorBoard.  It also includes a directory monitoring feature to automatically process new images added to a specified input directory.  A Raspberry Pi camera integration is included to capture images directly into the processing pipeline.
 
-## Features
+## 🎯 Project Overview
+This project runs **image recognition** on a **Raspberry Pi** using a **TensorFlow Lite (TFLite) model** and a Raspberry Pi Camera. The system captures an image and classifies it in real time!
 
-* **Automatic Image Processing:** Monitors a designated input directory for new images and processes them automatically.
-* **TensorBoard Integration:** Logs model architecture, model visualization, classified images, and predictions to TensorBoard for easy monitoring and analysis.
-* **Image Annotation:** Adds predicted class and confidence score as a label to the processed images.
-* **Directory Management:** Moves processed images from the input directory to a processed directory.
-* **Error Handling:** Includes basic error handling for file processing issues.
-* **Live Camera Integration:** Includes a command to capture images from a Raspberry Pi camera using `libcamera-still` and place them in the input directory.
+🔹 **Technologies Used:**
+- 🐍 Python
+- 📷 Raspberry Pi Camera with `picamera2`
+- ⚡ TensorFlow Lite (`tflite-runtime`)
+- 🐳 Docker (Optional, for containerization)
 
-## Requirements
+---
 
-* Python 3
-* TensorFlow/Keras
-* OpenCV (cv2)
-* NumPy
-* `libcamera-still` (for Raspberry Pi camera capture)
+## 🚀 Setup & Installation
 
-Code Explanation (Key Parts)
-The Python script performs the following key actions:
+### 1️⃣ **Install Dependencies**
+Ensure your Raspberry Pi has all necessary dependencies:
 
-- Loads Pre-trained Model
-- Logs Model Information: Logs the model architecture summary and a visualization of the model to TensorBoard.
-- classify_and_log_image() Function:
-- Loads and preprocesses the input image.
-- Performs prediction using the ResNet50 model.
-- Decodes the predictions to get the class name and confidence score.
-- Annotates the image with the prediction information.
-- Logs the annotated image and prediction text to TensorBoard.
-- monitor_directory() Function:
-- Continuously monitors the img/input directory for new files.
-- For each new file, calls classify_and_log_image() to process it.
-- Moves the processed image to the img/processed directory.
-- Includes the libcamera-still command to capture images from the camera.
-- Main Loop: Starts the monitor_directory() function to begin the image processing loop.
+```sh
+sudo apt update && sudo apt install -y libcamera0 libcamera-apps libcamera-dev python3-libcamera
+pip install opencv-python numpy tflite-runtime picamera2
+```
+
+### 2️⃣ **Clone the Repository**
+
+```sh
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+```
+
+### 3️⃣ **Run the Python Script**
+
+```sh
+python detect.py
+```
+
+This will capture an image and run inference using your `model.tflite` file.
+
+---
+
+## 🐳 Running in Docker (Optional)
+
+### **Build & Run the Docker Container**
+If you want to run this in a Docker container:
+
+```sh
+docker build -t pi-ai-camera .
+docker run --rm -it \
+  --device /dev/video0 \
+  -v $(pwd):/app \
+  pi-ai-camera
+```
+
+This ensures your **Python scripts & model files update without rebuilding** the Docker image.
+
+---
+
+## 📜 Project Structure
+```
+📂 your-repo/
+├── 📜 detect.py       # Main script for capturing & classifying images
+├── 🤖 model.tflite    # TensorFlow Lite model
+├── 📷 camera.py       # Handles image capture
+├── 📄 requirements.txt # Python dependencies
+└── 📝 README.md       # This file
+```
+
+---
+
+## 🏆 Features
+✅ Capture images from the **Raspberry Pi Camera**  
+✅ Run **real-time image recognition** using **TFLite**  
+✅ **Lightweight & Fast** - Perfect for **Edge AI applications**  
+✅ Optional **Docker support** for easier deployment  
+
+---
+
+## 🤖 Example Output
+```sh
+Image captured!
+Running TensorFlow Lite inference...
+Prediction: 🚗 Car (98.7% confidence)
+```
+
+---
+
+## 🛠️ Troubleshooting
+### 🔹 `ModuleNotFoundError: No module named 'libcamera'`
+Run:
+```sh
+sudo apt install -y libcamera0 libcamera-apps libcamera-dev python3-libcamera
+```
+
+### 🔹 `ValueError: Could not open 'model.tflite'`
+Ensure your `model.tflite` file exists in the correct location.
+Run:
+```sh
+ls -lah $(pwd)/model.tflite
+```
+
+---
+
+## 📜 License
+This project is **open-source** under the [MIT License](LICENSE).
