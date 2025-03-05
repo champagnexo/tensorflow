@@ -18,7 +18,7 @@ docker --version  # Verify installation
 sudo apt install -y libffi-dev libssl-dev
 sudo apt install -y python3 python3-pip
 sudo pip3 install docker-compose
-docker-compose --version  # Verify installation
+docker compose --version  # Verify installation
 ```
 
 ---
@@ -180,12 +180,12 @@ Now, let’s **build and run** your Tiramisu AI system!
 
 ### **Build the Docker Image**
 ```sh
-docker-compose build
+docker compose build
 ```
 
 ### **Run the Container**
 ```sh
-docker-compose up -d
+docker compose up -d
 ```
 
 ### **View Logs (Check Outputs)**
