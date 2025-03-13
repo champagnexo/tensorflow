@@ -1,4 +1,4 @@
-# 🧠 Raspberry Pi AI Camera - TensorFlow Lite Image Recognition
+# Raspberry Pi AI Camera - TensorFlow Lite Image Recognition
 
 
 ## 🎯 Project Overview
