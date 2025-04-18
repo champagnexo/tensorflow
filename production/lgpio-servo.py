@@ -1,3 +1,4 @@
+#Made with love by the CristiMediaGroup team!
 import lgpio
 import time
 
