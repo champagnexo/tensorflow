@@ -1,3 +1,5 @@
+#Deprecated version, look for lgpio-servo.py for latest version.
+#Made with love by the CristiMediaGroup team!
 import lgpio
 import time
 
